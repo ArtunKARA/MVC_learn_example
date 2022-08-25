@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LrnMvcMovie.Models.Movie>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Saklanan Gerçekler Şimdi Satışta</h1>
+    <p class="lead">Şimdi Bu gerçekler Tek Tıh Ötenizde</p>
+    <p><a href="https://www.youtube.com/watch?v=fdFvJGKzPNQ" class="btn btn-primary btn-lg">Tıkla Hemen &raquo;</a></p>
+</div>
+
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-md-4">
+        <h2> @Html.DisplayFor(modelItem => item.Title)</h2>
+        <p> <tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReleaseDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Genre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>       </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Satın Al Hemen &raquo;</a></p>
+    </div>
+</div>
+}
+
+
+
+
+
+
+
+
+
